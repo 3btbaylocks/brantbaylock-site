@@ -1,7 +1,15 @@
 (function(){
   const base=location.pathname.startsWith('/brantbaylock-site')?'/brantbaylock-site':'';
   const logo=base+'/assets/img/signature-logo.webp?v=5.3';
-  const portrait=base+'/assets/img/desk-portrait-v6.webp?v=6';
+  const portraitParts=[
+    base+'/assets/portrait-1.txt?v=6.2',
+    base+'/assets/portrait-2.txt?v=6.2',
+    base+'/assets/desk-v6-3.txt?v=6.2',
+    base+'/assets/desk-v6-4.txt?v=6.2',
+    base+'/assets/desk-v6-5.txt?v=6.2',
+    base+'/assets/desk-v6-6.txt?v=6.2'
+  ];
+  let portraitData=null;
 
   function applyBrand(){
     document.querySelectorAll('.brand img,.footer-brand img,.signature-lockup img,.hero-signature img').forEach(img=>{
@@ -25,13 +33,37 @@
     document.body.classList.add('v5-brand-ready');
   }
 
-  function applyPortrait(root=document){
+  function preparePortrait(root=document){
     root.querySelectorAll?.('.portrait-frame img,.about-portrait img').forEach(img=>{
-      if(img.src!==new URL(portrait,location.href).href) img.src=portrait;
+      if(!portraitData){
+        img.style.visibility='hidden';
+        img.alt='';
+      }
+    });
+  }
+
+  function applyPortrait(root=document){
+    if(!portraitData)return;
+    root.querySelectorAll?.('.portrait-frame img,.about-portrait img').forEach(img=>{
+      img.src=portraitData;
       img.alt='Brant Baylock, Senior Living Community Advisor';
       img.decoding='async';
+      img.style.visibility='visible';
     });
     document.body.classList.add('v6-portrait-ready');
+  }
+
+  async function loadPortrait(){
+    try{
+      const parts=await Promise.all(portraitParts.map(url=>fetch(url,{cache:'no-store'}).then(r=>{
+        if(!r.ok)throw new Error('portrait part unavailable: '+url);
+        return r.text();
+      })));
+      portraitData='data:image/webp;base64,'+parts.map(s=>s.trim()).join('');
+      applyPortrait();
+    }catch(err){
+      console.error('Desk portrait failed to assemble.',err);
+    }
   }
 
   const rules=[
@@ -75,11 +107,12 @@
   function run(){
     applyBrand();
     correctText(document.body);
-    applyPortrait();
+    preparePortrait();
+    loadPortrait();
   }
 
   run();
   new MutationObserver(ms=>ms.forEach(m=>m.addedNodes.forEach(n=>{
-    if(n.nodeType===1){applyBrand();correctText(n);applyPortrait(n);}
+    if(n.nodeType===1){applyBrand();correctText(n);portraitData?applyPortrait(n):preparePortrait(n);}
   }))).observe(document.body,{childList:true,subtree:true});
 })();
