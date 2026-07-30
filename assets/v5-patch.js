@@ -1,6 +1,7 @@
 (function(){
   const base=location.pathname.startsWith('/brantbaylock-site')?'/brantbaylock-site':'';
-  const logo=base+'/assets/img/signature-logo.webp?v=5.2';
+  const logo=base+'/assets/img/signature-logo.webp?v=5.3';
+  let portraitData=null;
 
   function applyBrand(){
     document.querySelectorAll('.brand img,.footer-brand img,.signature-lockup img,.hero-signature img').forEach(img=>{
@@ -22,6 +23,30 @@
     }
     document.querySelectorAll('.portrait-badge img').forEach(img=>img.remove());
     document.body.classList.add('v5-brand-ready');
+  }
+
+  function applyPortrait(root=document){
+    if(!portraitData)return;
+    root.querySelectorAll?.('.portrait-frame img,.about-portrait img').forEach(img=>{
+      img.src=portraitData;
+      img.alt='Brant Baylock, Senior Living Community Advisor';
+    });
+  }
+
+  async function loadPortrait(){
+    try{
+      const parts=await Promise.all([1,2,3,4,5,6].map(i=>
+        fetch(base+'/assets/portrait-'+i+'.txt?v=5.3',{cache:'no-store'}).then(r=>{
+          if(!r.ok)throw new Error('portrait chunk '+i+' unavailable');
+          return r.text();
+        })
+      ));
+      portraitData='data:image/webp;base64,'+parts.map(s=>s.trim()).join('');
+      applyPortrait();
+      document.body.classList.add('v5-portrait-ready');
+    }catch(err){
+      console.warn('Crisp portrait fallback in use.',err);
+    }
   }
 
   const rules=[
@@ -65,10 +90,11 @@
   function run(){
     applyBrand();
     correctText(document.body);
+    loadPortrait();
   }
 
   run();
   new MutationObserver(ms=>ms.forEach(m=>m.addedNodes.forEach(n=>{
-    if(n.nodeType===1){applyBrand();correctText(n);}
+    if(n.nodeType===1){applyBrand();correctText(n);applyPortrait(n);}
   }))).observe(document.body,{childList:true,subtree:true});
 })();
