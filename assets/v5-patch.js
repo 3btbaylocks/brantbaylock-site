@@ -1,7 +1,7 @@
 (function(){
   const base=location.pathname.startsWith('/brantbaylock-site')?'/brantbaylock-site':'';
   const logo=base+'/assets/img/signature-logo.webp?v=5.3';
-  let portraitData=null;
+  const portrait=base+'/assets/img/desk-portrait-v6.webp?v=6';
 
   function applyBrand(){
     document.querySelectorAll('.brand img,.footer-brand img,.signature-lockup img,.hero-signature img').forEach(img=>{
@@ -26,27 +26,12 @@
   }
 
   function applyPortrait(root=document){
-    if(!portraitData)return;
     root.querySelectorAll?.('.portrait-frame img,.about-portrait img').forEach(img=>{
-      img.src=portraitData;
+      if(img.src!==new URL(portrait,location.href).href) img.src=portrait;
       img.alt='Brant Baylock, Senior Living Community Advisor';
+      img.decoding='async';
     });
-  }
-
-  async function loadPortrait(){
-    try{
-      const parts=await Promise.all([1,2,3,4,5,6].map(i=>
-        fetch(base+'/assets/portrait-'+i+'.txt?v=5.3',{cache:'no-store'}).then(r=>{
-          if(!r.ok)throw new Error('portrait chunk '+i+' unavailable');
-          return r.text();
-        })
-      ));
-      portraitData='data:image/webp;base64,'+parts.map(s=>s.trim()).join('');
-      applyPortrait();
-      document.body.classList.add('v5-portrait-ready');
-    }catch(err){
-      console.warn('Crisp portrait fallback in use.',err);
-    }
+    document.body.classList.add('v6-portrait-ready');
   }
 
   const rules=[
@@ -90,7 +75,7 @@
   function run(){
     applyBrand();
     correctText(document.body);
-    loadPortrait();
+    applyPortrait();
   }
 
   run();
