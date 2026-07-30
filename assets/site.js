@@ -17,6 +17,6 @@
 })();
 (function(){
  const base=location.pathname.startsWith('/brantbaylock-site')?'/brantbaylock-site':'';
- const css=document.createElement('link');css.rel='stylesheet';css.href=base+'/assets/v5-overrides.css?v=5';document.head.appendChild(css);
- const js=document.createElement('script');js.src=base+'/assets/v5-patch.js?v=5';js.async=false;document.head.appendChild(js);
+ const css=document.createElement('link');css.rel='stylesheet';css.href=base+'/assets/v5-overrides.css?v=6.2';document.head.appendChild(css);
+ const js=document.createElement('script');js.src=base+'/assets/v5-patch.js?v=6.2';js.async=false;document.head.appendChild(js);
 })();
