@@ -1,0 +1,48 @@
+/* V5 review corrections */
+html,body{max-width:100%;overflow-x:hidden}
+.wrap,.hero-copy,.portrait-wrap,.feature-strip,.feature-strip>*{min-width:0}
+.site-header .nav{height:104px}
+.brand{gap:16px;min-width:290px}
+.brand img{width:78px;height:78px;object-fit:contain;flex:0 0 auto}
+.brand-text strong{font-size:29px}
+.brand-text span{font-size:10px}
+.hero-signature{width:190px;margin:0 0 22px -10px}
+.hero-signature img{width:100%;height:auto;object-fit:contain}
+.footer-brand{max-width:none;margin:0 0 22px}
+.footer-brand img{width:190px;max-height:none;height:auto;object-fit:contain}
+.signature-lockup{max-width:none;margin-top:28px}
+.signature-lockup img{width:220px;height:auto;object-fit:contain}
+.portrait-frame{height:auto;aspect-ratio:4/5;background:#fff;border-radius:120px 120px 12px 12px}
+.portrait-frame img{width:100%;height:100%;object-fit:contain;object-position:center top;image-rendering:auto}
+.about-portrait{max-width:480px;background:#fff;overflow:visible}
+.about-portrait img{width:100%;height:auto;aspect-ratio:auto;object-fit:contain;object-position:center;image-rendering:auto}
+.feature-strip .copy h2{color:#fff}
+.feature-strip .copy .lead{color:#eef1f3}
+.section.dark .lead,.section.dark p:not(.quote){color:#eef1f3}
+.feature-strip{width:100%;max-width:100%;overflow:hidden}
+.feature-strip .copy{min-width:0}
+.feature-strip .copy h2,.feature-strip .copy p{max-width:100%;overflow-wrap:anywhere}
+@media(max-width:1020px){.nav-links{top:104px}}
+@media(max-width:720px){
+ .wrap{width:calc(100% - 30px)}
+ .site-header .nav{height:92px}
+ .nav-links{top:92px}
+ .brand{gap:11px;min-width:0;max-width:calc(100% - 58px)}
+ .brand img{width:68px;height:68px}
+ .brand-text strong{font-size:25px;white-space:nowrap}
+ .hero-copy{padding-top:42px}
+ .hero-signature{width:150px;margin:0 0 18px -7px}
+ .portrait-wrap{max-width:520px;margin-inline:auto}
+ .portrait-frame{height:auto;aspect-ratio:4/5;border-radius:88px 88px 0 0}
+ .portrait-badge{left:12px;right:12px;bottom:16px;width:auto;max-width:310px;padding:17px 20px}
+ .feature-strip{display:block}
+ .feature-strip .copy{padding:38px 26px}
+ .feature-strip .copy h2{font-size:clamp(40px,13vw,54px);line-height:1.02}
+ .feature-strip .copy .lead{font-size:18px;line-height:1.62}
+ .feature-strip .visual{width:100%;min-height:300px}
+ .corridor-word{left:24px;right:20px;bottom:28px;font-size:44px;overflow-wrap:anywhere}
+ .about-portrait{max-width:100%;margin-inline:auto}
+ .signature-lockup img{width:min(230px,65vw);margin-inline:auto}
+ .footer-brand img{width:min(220px,62vw)}
+}
+@media(max-width:430px){.brand img{width:64px;height:64px}.brand-text strong{font-size:23px}.feature-strip .copy{padding:34px 22px}}
