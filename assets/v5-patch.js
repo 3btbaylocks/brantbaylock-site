@@ -1,6 +1,6 @@
 (function(){
   const base=location.pathname.startsWith('/brantbaylock-site')?'/brantbaylock-site':'';
-  let logo=base+'/assets/img/brand-mark.png';
+  const logo=base+'/assets/img/signature-logo.webp?v=5.2';
 
   function applyBrand(){
     document.querySelectorAll('.brand img,.footer-brand img,.signature-lockup img,.hero-signature img').forEach(img=>{
@@ -21,23 +21,7 @@
       heroCopy.insertBefore(d,eyebrow||heroCopy.firstChild);
     }
     document.querySelectorAll('.portrait-badge img').forEach(img=>img.remove());
-  }
-
-  async function loadExactLogo(){
-    try{
-      const parts=await Promise.all([1,2,3].map(i=>
-        fetch(base+'/assets/logo-'+i+'.txt?v=5.1',{cache:'no-store'}).then(r=>{
-          if(!r.ok) throw new Error('logo chunk '+i+' unavailable');
-          return r.text();
-        })
-      ));
-      logo='data:image/webp;base64,'+parts.map(s=>s.trim()).join('');
-      applyBrand();
-      document.body.classList.add('v5-brand-ready');
-    }catch(err){
-      console.warn('Signature logo fallback in use.',err);
-      applyBrand();
-    }
+    document.body.classList.add('v5-brand-ready');
   }
 
   const rules=[
@@ -81,7 +65,6 @@
   function run(){
     applyBrand();
     correctText(document.body);
-    loadExactLogo();
   }
 
   run();
