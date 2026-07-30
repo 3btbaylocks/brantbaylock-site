@@ -15,3 +15,8 @@
  // Clarity
  if(cfg.clarityProjectId){(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src='https://www.clarity.ms/tag/'+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window,document,'clarity','script',cfg.clarityProjectId);}
 })();
+(function(){
+ const base=location.pathname.startsWith('/brantbaylock-site')?'/brantbaylock-site':'';
+ const css=document.createElement('link');css.rel='stylesheet';css.href=base+'/assets/v5-overrides.css?v=5';document.head.appendChild(css);
+ const js=document.createElement('script');js.src=base+'/assets/v5-patch.js?v=5';js.async=false;document.head.appendChild(js);
+})();
