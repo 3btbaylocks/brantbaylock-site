@@ -1,0 +1,51 @@
+name: Normalize live domain paths
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/live-domain-normalize.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  normalize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Normalize production paths and crawl settings
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          from xml.sax.saxutils import escape
+
+          root = Path('.')
+          pages = []
+          for p in sorted(root.glob('*.html')):
+              text = p.read_text(encoding='utf-8')
+              text = text.replace('/brantbaylock-site/', '/')
+              text = text.replace('<meta name="robots" content="noindex,nofollow">', '<meta name="robots" content="index,follow">')
+              p.write_text(text, encoding='utf-8')
+              if p.name != '404.html':
+                  pages.append('https://brantbaylock.com/' if p.name == 'index.html' else f'https://brantbaylock.com/{p.name}')
+
+          sitemap = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+          for url in pages:
+              sitemap.append(f'  <url><loc>{escape(url)}</loc></url>')
+          sitemap.append('</urlset>')
+          Path('sitemap.xml').write_text('\n'.join(sitemap) + '\n', encoding='utf-8')
+          Path('robots.txt').write_text('User-agent: *\nAllow: /\nSitemap: https://brantbaylock.com/sitemap.xml\n', encoding='utf-8')
+          PY
+          rm .github/workflows/live-domain-normalize.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m "Normalize site for brantbaylock.com launch"
+            git push
+          fi
