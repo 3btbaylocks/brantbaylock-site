@@ -11,8 +11,7 @@
     "category": "Market Intelligence",
     "eyebrow": "July 2026",
     "summary": "Public inventory remains thin, but buyers remain selective. The stronger signal is whether the operation, census, staffing, compliance, and financial story support the price.",
-    "downloadUrl": "https://drive.google.com/file/d/19SeZNkitJVlG2nA5QJ2pN1HEZHwOMeYX/view",
-    "ctaLabel": "Read the July edition",
+    "ctaLabel": "Request the July edition",
     "sortOrder": 10
   },
   {
@@ -26,9 +25,8 @@
     "publishDate": "2026-06-01",
     "category": "Market Intelligence",
     "eyebrow": "June 2026",
-    "summary": "The June edition preserves the monthly owner-intelligence record across the seven-county Central-East Corridor as the market continued to reward clarity, operating quality, and defensible value.",
-    "downloadUrl": "https://drive.google.com/file/d/17CAWuRkOD9Ddu970xzAuxyhU0e4A12dh/view",
-    "ctaLabel": "Read the June edition",
+    "summary": "The June edition tracked the relationship between market conditions, operating quality, and defensible value across the Central-East Corridor.",
+    "ctaLabel": "Request the June edition",
     "sortOrder": 11
   },
   {
@@ -42,9 +40,8 @@
     "publishDate": "2026-05-01",
     "category": "Market Intelligence",
     "eyebrow": "May 2026",
-    "summary": "Publicly visible inventory remained limited, making the quieter signals around operating quality, market positioning, and owner readiness increasingly important.",
-    "downloadUrl": "https://drive.google.com/file/d/1cEig2tmo6VBuE2Ctl-XTj2XXTSXYPrae/view",
-    "ctaLabel": "Read the May edition",
+    "summary": "Publicly visible inventory remained limited, making operating quality, market positioning, and owner readiness increasingly important.",
+    "ctaLabel": "Request the May edition",
     "sortOrder": 12
   },
   {
@@ -58,9 +55,8 @@
     "publishDate": "2026-04-01",
     "category": "Market Intelligence",
     "eyebrow": "April 2026",
-    "summary": "Lake County entered the Corridor framework as demographic and staffing pressures shifted west, while memory-care regulation became a more important owner consideration.",
-    "downloadUrl": "https://drive.google.com/file/d/1FidgoK_Dv254eXyKBGOHhdQwILi60HjO/view",
-    "ctaLabel": "Read the April edition",
+    "summary": "Lake County entered the Corridor framework as demographic, staffing, and memory-care considerations continued to shift the owner conversation.",
+    "ctaLabel": "Request the April edition",
     "sortOrder": 13
   },
   {
@@ -74,9 +70,8 @@
     "publishDate": "2026-03-01",
     "category": "Market Intelligence",
     "eyebrow": "March 2026",
-    "summary": "Supply remained tight, while pricing-versus-proof and diligence risk continued to shape buyer behavior and owner leverage.",
-    "downloadUrl": "https://drive.google.com/file/d/1n_rw7zv6KULS0_RKvxYG_G3ul7tnmn3-/view",
-    "ctaLabel": "Read the March edition",
+    "summary": "Supply remained tight while pricing-versus-proof and diligence risk continued to shape buyer behavior and owner leverage.",
+    "ctaLabel": "Request the March edition",
     "sortOrder": 14
   },
   {
@@ -90,9 +85,8 @@
     "publishDate": "2026-02-01",
     "category": "Market Intelligence",
     "eyebrow": "February 2026",
-    "summary": "New supply remained limited, shifting attention toward pricing strategy, margin control, documentation readiness, and expansion risk.",
-    "downloadUrl": "https://drive.google.com/file/d/1prOFujtKOi5LRnN0703rCLiG5-umSFHz/view",
-    "ctaLabel": "Read the February edition",
+    "summary": "New supply remained limited, shifting attention toward pricing discipline, margin control, readiness, and expansion risk.",
+    "ctaLabel": "Request the February edition",
     "sortOrder": 15
   },
   {
@@ -106,9 +100,8 @@
     "publishDate": "2026-01-01",
     "category": "Market Intelligence",
     "eyebrow": "January 2026",
-    "summary": "Listings were sitting longer when pricing ran ahead of proof, while disciplined buyers favored clean, supportable NOI and easier underwriting.",
-    "downloadUrl": "https://drive.google.com/file/d/1UpLVo5tDg-1F5KVF1zjOXuSVYSZAuFbi/view",
-    "ctaLabel": "Read the January edition",
+    "summary": "Listings were sitting longer when pricing ran ahead of proof, while disciplined buyers favored cleaner, more supportable underwriting stories.",
+    "ctaLabel": "Request the January edition",
     "sortOrder": 16
   },
   {
@@ -122,10 +115,9 @@
     "publishDate": "2026-05-25",
     "category": "Owner Advisory",
     "eyebrow": "Owner Advisory",
-    "summary": "A preliminary community signal brief designed to help independent senior living owners understand how buyers, lenders, and operators may read the community before a listing, pricing conversation, or transition commitment.",
+    "summary": "A private early-read tool for owners who sense that a larger decision may be forming but are not yet ready for a full diagnostic or transaction conversation.",
     "internalUrl": "/resources/first-step.html",
-    "downloadUrl": "https://drive.google.com/file/d/1XFYY7WxmPnMYoBcoFQuU4Z6Z1XlhWV2z/view",
-    "ctaLabel": "Read online",
+    "ctaLabel": "Learn about FIRst Step",
     "sortOrder": 20
   },
   {
@@ -139,10 +131,9 @@
     "publishDate": "2026-05-25",
     "category": "Owner Advisory",
     "eyebrow": "Owner Advisory",
-    "summary": "A deeper advisory report designed to help ownership understand community performance, market position, buyer fit, lender confidence, value pressure, and transition readiness before a major strategic move.",
+    "summary": "A private owner-side diagnostic for understanding whether the community story supports confidence, creates pressure, or needs work before a major strategic decision.",
     "internalUrl": "/resources/facility-impact-report.html",
-    "downloadUrl": "https://drive.google.com/file/d/15mHDQ1xKLbnOFPw2mmTch4lbywBy9dr3/view",
-    "ctaLabel": "Read online",
+    "ctaLabel": "Learn about FIR",
     "sortOrder": 30
   },
   {
@@ -158,7 +149,6 @@
     "eyebrow": "Owner Advisory",
     "summary": "When owner fatigue, census pressure, capital needs, succession, family timing, or buyer interest begins changing the decision in front of ownership, an early clarity conversation can help before options narrow.",
     "internalUrl": "/resources/owners-and-trusted-advisors.html",
-    "downloadUrl": "https://drive.google.com/file/d/1XYEVJEGyFGgNJgSW5AChaIBgZI0PB9wm/view",
     "ctaLabel": "Read online",
     "sortOrder": 40
   },
@@ -261,8 +251,8 @@
     "title": "The 80+ Population Is Growing Faster Than the Workforce",
     "slug": "80-plus-workforce-risk",
     "category": "Operations & Risk",
-    "eyebrow": "Demand & Workforce",
-    "summary": "Demand growth is only useful if a community can staff it. The growth of the 80+ population has to be read alongside the labor pool required to serve residents safely and consistently.",
+    "eyebrow": "Demographics & Labor",
+    "summary": "Demand growth does not solve the labor problem. Owners need to understand whether staffing capacity can keep pace with the population the industry expects to serve.",
     "externalUrl": "https://www.linkedin.com/posts/brantbaylock_seniorhousing-workforcecrisis-assistedliving-activity-7336044069241925632-B28E",
     "ctaLabel": "Read the observation",
     "sortOrder": 123
@@ -277,7 +267,7 @@
     "slug": "investing-senior-housing-silver-tsunami",
     "category": "Market Conditions",
     "eyebrow": "Demand & Supply",
-    "summary": "Demographics create demand, but constrained supply, staffing, margins, and capital determine who can capture it. A strong population story does not make every senior housing community equally strong.",
+    "summary": "Demographic demand can strengthen the long-term case for senior housing, but operating execution, supply discipline, and community-level performance still determine whether that demand becomes value.",
     "externalUrl": "https://www.linkedin.com/posts/brantbaylock_seniorhousing-investing-demographictrends-activity-7335628829006184449-tLPK",
     "ctaLabel": "Read the observation",
     "sortOrder": 124
