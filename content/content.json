@@ -156,9 +156,10 @@
     "publishDate": "2026-07-01",
     "category": "Owner Advisory",
     "eyebrow": "Owner Advisory",
-    "summary": "A concise overview of when senior living owners and their trusted advisors may benefit from an early clarity conversation before sale, refinance, reinvestment, succession, or transition decisions.",
+    "summary": "When owner fatigue, census pressure, capital needs, succession, family timing, or buyer interest begins changing the decision in front of ownership, an early clarity conversation can help before options narrow.",
+    "internalUrl": "/resources/owners-and-trusted-advisors.html",
     "downloadUrl": "https://drive.google.com/file/d/1XYEVJEGyFGgNJgSW5AChaIBgZI0PB9wm/view",
-    "ctaLabel": "Open resource",
+    "ctaLabel": "Read online",
     "sortOrder": 40
   },
   {
@@ -170,8 +171,8 @@
     "title": "Before the Buyer Calls, Know What Your Facility Has Already Told Them",
     "slug": "before-the-buyer-calls",
     "category": "Owner Decisions",
-    "eyebrow": "Published Article",
-    "summary": "A published LinkedIn article on what a senior living community may already communicate before a buyer ever makes contact.",
+    "eyebrow": "Buyer Perception",
+    "summary": "Buyer perception starts before the first conversation. The question for ownership is what the community is already signaling into the market, and whether those signals strengthen leverage or create it for the buyer.",
     "externalUrl": "https://www.linkedin.com/pulse/before-buyer-calls-know-what-your-facility-has-already-brant-baylock-xw3ze",
     "ctaLabel": "Read the article",
     "sortOrder": 100
@@ -185,8 +186,8 @@
     "title": "What is my assisted living facility worth in Central-East Florida right now?",
     "slug": "what-is-my-assisted-living-facility-worth",
     "category": "Valuation",
-    "eyebrow": "Published Article",
-    "summary": "A published LinkedIn article addressing the owner question at the center of valuation in Central-East Florida.",
+    "eyebrow": "Value & Positioning",
+    "summary": "Value is not a licensed-bed formula or a tax-roll number. The useful question is what the current operation, market position, real estate, and realistic buyer pool can actually support today.",
     "externalUrl": "https://www.linkedin.com/pulse/what-my-assisted-living-facility-worth-central-east-florida-baylock-wppre",
     "ctaLabel": "Read the article",
     "sortOrder": 101
@@ -200,8 +201,8 @@
     "title": "How do I know if an offer for my Florida assisted living facility is fair?",
     "slug": "is-my-assisted-living-offer-fair",
     "category": "Owner Decisions",
-    "eyebrow": "Published Article",
-    "summary": "A published LinkedIn article focused on the question owners face when buyer interest arrives: is the offer actually fair?",
+    "eyebrow": "Evaluating Offers",
+    "summary": "A fair offer is more than the headline price. Terms, timing, certainty, diligence, financing risk, and what ownership gives up to get to closing can materially change what an offer is actually worth.",
     "externalUrl": "https://www.linkedin.com/pulse/how-do-i-know-offer-my-florida-assisted-living-facility-brant-baylock-19iye",
     "ctaLabel": "Read the article",
     "sortOrder": 102
@@ -215,10 +216,10 @@
     "title": "What’s Quietly Squeezing NOI at Senior Living Facilities?",
     "slug": "insurance-noi-pressure",
     "category": "Operations & Risk",
-    "eyebrow": "Owner Observation",
-    "summary": "A field observation on rising property-insurance costs and the way those costs can pressure NOI, valuation, debt service, and buyer confidence.",
+    "eyebrow": "Insurance & NOI",
+    "summary": "Insurance can erode NOI quietly and then show up loudly in valuation, debt coverage, and buyer confidence. Owners should understand that pressure before the market prices it for them.",
     "externalUrl": "https://www.linkedin.com/posts/brantbaylock_seniorliving-cre-assistedliving-activity-7326214337700716547-rtPj",
-    "ctaLabel": "Read on LinkedIn",
+    "ctaLabel": "Read the observation",
     "sortOrder": 120
   },
   {
@@ -230,10 +231,10 @@
     "title": "Capital Is Coming Back, but Underwriting Is Getting Sharper",
     "slug": "capital-underwriting-sharper",
     "category": "Buyer Lens",
-    "eyebrow": "Owner Observation",
-    "summary": "A market observation on rising transaction activity, improving occupancy, tight supply, and why independent owners still need operational certainty to support value.",
+    "eyebrow": "Capital & Underwriting",
+    "summary": "More capital does not automatically mean easier deals. As transaction activity improves, buyers can still become more selective about operating quality, proof, and what they are willing to finance.",
     "externalUrl": "https://www.linkedin.com/posts/brantbaylock_seniorhousing-seniorliving-assistedliving-activity-7421930008488685569-sC9I",
-    "ctaLabel": "Read on LinkedIn",
+    "ctaLabel": "Read the observation",
     "sortOrder": 121
   },
   {
@@ -245,10 +246,10 @@
     "title": "Revenue Up, Competition Down: What the NIC Signal Means for Owners",
     "slug": "nic-revenue-competition-reinvestment",
     "category": "Market Conditions",
-    "eyebrow": "Owner Observation",
-    "summary": "A concise owner-side read on stronger industry revenue, cooling wage pressure, limited construction, and why reinvestment and positioning still matter.",
+    "eyebrow": "Revenue & Reinvestment",
+    "summary": "Stronger revenue and limited new competition can create room to reinvest. The owner question is where that capital actually improves performance, positioning, and the story a future buyer or lender will underwrite.",
     "externalUrl": "https://www.linkedin.com/posts/brantbaylock_seniorliving-assistedliving-memorycare-activity-7384585203635347460-ynLf",
-    "ctaLabel": "Read on LinkedIn",
+    "ctaLabel": "Read the observation",
     "sortOrder": 122
   },
   {
@@ -260,10 +261,10 @@
     "title": "The 80+ Population Is Growing Faster Than the Workforce",
     "slug": "80-plus-workforce-risk",
     "category": "Operations & Risk",
-    "eyebrow": "Owner Observation",
-    "summary": "A workforce-risk observation connecting rapid growth in the 80+ population with the staffing capacity required to support assisted living demand.",
+    "eyebrow": "Demand & Workforce",
+    "summary": "Demand growth is only useful if a community can staff it. The growth of the 80+ population has to be read alongside the labor pool required to serve residents safely and consistently.",
     "externalUrl": "https://www.linkedin.com/posts/brantbaylock_seniorhousing-workforcecrisis-assistedliving-activity-7336044069241925632-B28E",
-    "ctaLabel": "Read on LinkedIn",
+    "ctaLabel": "Read the observation",
     "sortOrder": 123
   },
   {
@@ -275,10 +276,10 @@
     "title": "Investing in Senior Housing Amidst the Silver Tsunami",
     "slug": "investing-senior-housing-silver-tsunami",
     "category": "Market Conditions",
-    "eyebrow": "Owner Observation",
-    "summary": "A senior-housing investment observation connecting demographic growth, constrained supply, operating pressure, and the long-term demand story.",
+    "eyebrow": "Demand & Supply",
+    "summary": "Demographics create demand, but constrained supply, staffing, margins, and capital determine who can capture it. A strong population story does not make every senior housing community equally strong.",
     "externalUrl": "https://www.linkedin.com/posts/brantbaylock_seniorhousing-investing-demographictrends-activity-7335628829006184449-tLPK",
-    "ctaLabel": "Read on LinkedIn",
+    "ctaLabel": "Read the observation",
     "sortOrder": 124
   }
 ]
