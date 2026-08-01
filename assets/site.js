@@ -21,6 +21,34 @@
   if(linkFile===currentFile)a.classList.add('active');
  });
 
+ // Florida brokerage identification beside website contact points.
+ const brokerageName='Platinum Real Estate';
+ function brokerageLine(context){
+  const line=document.createElement('div');
+  line.className='brokerage-affiliation'+(context?' brokerage-affiliation--'+context:'');
+  line.textContent=brokerageName;
+  line.setAttribute('aria-label','Brokerage: '+brokerageName);
+  return line;
+ }
+ function hasContactPoint(root){
+  return !!root.querySelector('a[href^="tel:"],a[href^="mailto:"],[data-config-link]');
+ }
+ document.querySelectorAll('main .contact-card').forEach(card=>{
+  if(!hasContactPoint(card)||card.querySelector('.brokerage-affiliation'))return;
+  const firstContact=card.querySelector('.contact-method,.btn-row,a[href^="tel:"],a[href^="mailto:"],[data-config-link]');
+  if(firstContact)firstContact.insertAdjacentElement('beforebegin',brokerageLine('contact'));
+ });
+ document.querySelectorAll('main .btn-row').forEach(row=>{
+  if(!hasContactPoint(row)||row.closest('.contact-card')||row.previousElementSibling?.classList.contains('brokerage-affiliation'))return;
+  row.insertAdjacentElement('beforebegin',brokerageLine('contact'));
+ });
+ document.querySelectorAll('footer .footer-grid > div').forEach(column=>{
+  const heading=column.querySelector(':scope > strong');
+  const links=column.querySelector(':scope > .footer-links');
+  if(!heading||!links||heading.textContent.trim()!=='Connect'||column.querySelector('.brokerage-affiliation'))return;
+  links.insertAdjacentElement('beforebegin',brokerageLine('footer'));
+ });
+
  function event(name,params){
   if(typeof window.gtag==='function')window.gtag('event',name,params||{});
  }
@@ -145,7 +173,7 @@
  const base=location.pathname.startsWith('/brantbaylock-site')?'/brantbaylock-site':'';
  const css=document.createElement('link');
  css.rel='stylesheet';
- css.href=base+'/assets/v5-overrides.css?v=6.2';
+ css.href=base+'/assets/v5-overrides.css?v=6.3';
  document.head.appendChild(css);
  const js=document.createElement('script');
  js.src=base+'/assets/v5-patch.js?v=6.2';
