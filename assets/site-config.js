@@ -5,6 +5,6 @@ window.BB_CONFIG={
   "dischargeIntroUrl": "https://docs.google.com/forms/d/e/1FAIpQLSeaavKEEIKA99JVQexKvtBYWt7dooTHFELQ477gIsXbqjROxQ/viewform?usp=pp_url&entry.1926571282=Discharge+Organization",
   "linkedinUrl": "https://www.linkedin.com/in/brantbaylock/",
   "contentApiUrl": "",
-  "gaMeasurementId": "",
+  "gaMeasurementId": "G-DLS63RH84T",
   "clarityProjectId": ""
 };
