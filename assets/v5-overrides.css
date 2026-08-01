@@ -22,6 +22,9 @@ html,body{max-width:100%;overflow-x:hidden}
 .feature-strip{width:100%;max-width:100%;overflow:hidden}
 .feature-strip .copy{min-width:0}
 .feature-strip .copy h2,.feature-strip .copy p{max-width:100%;overflow-wrap:anywhere}
+.brokerage-affiliation{margin:0 0 12px;font-size:13px;line-height:1.4;font-weight:700;letter-spacing:.04em;color:#16263a}
+.brokerage-affiliation--footer{margin:12px 0 10px;color:#d7b56d}
+.section.dark .brokerage-affiliation,.feature-strip .brokerage-affiliation{color:#fff}
 @media(max-width:1020px){.nav-links{top:104px}}
 @media(max-width:720px){
  .wrap{width:calc(100% - 30px)}
@@ -44,5 +47,6 @@ html,body{max-width:100%;overflow-x:hidden}
  .about-portrait{max-width:100%;margin-inline:auto}
  .signature-lockup img{width:min(230px,65vw);margin-inline:auto}
  .footer-brand img{width:min(220px,62vw)}
+ .brokerage-affiliation{font-size:12px}
 }
 @media(max-width:430px){.brand img{width:64px;height:64px}.brand-text strong{font-size:23px}.feature-strip .copy{padding:34px 22px}}
