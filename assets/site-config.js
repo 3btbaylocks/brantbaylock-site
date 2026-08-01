@@ -6,5 +6,5 @@ window.BB_CONFIG={
   "linkedinUrl": "https://www.linkedin.com/in/brantbaylock/",
   "contentApiUrl": "",
   "gaMeasurementId": "G-DLS63RH84T",
-  "clarityProjectId": ""
+  "clarityProjectId": "xvjjhw6uwm"
 };
