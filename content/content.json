@@ -1,10 +1,25 @@
 [
   {
-    "contentId": "CORRIDOR-2026-07",
+    "contentId": "CORRIDOR-2026-08",
     "contentType": "Corridor Edition",
     "status": "Published",
     "featured": "Yes",
     "currentEdition": "Yes",
+    "title": "The Corridor | August 2026",
+    "slug": "corridor-august-2026",
+    "publishDate": "2026-08-01",
+    "category": "Market Intelligence",
+    "eyebrow": "August 2026",
+    "summary": "July produced no verified new 17+ bed assisted living or memory care listings, price reductions, status changes, or closed or pending sales. One Orange County future-supply site and two unresolved carryovers remained on the watchlist, but none changed the comparable set.",
+    "ctaLabel": "Request the August edition",
+    "sortOrder": 5
+  },
+  {
+    "contentId": "CORRIDOR-2026-07",
+    "contentType": "Corridor Edition",
+    "status": "Published",
+    "featured": "No",
+    "currentEdition": "No",
     "title": "The Corridor | July 2026",
     "slug": "corridor-july-2026",
     "publishDate": "2026-07-01",
