@@ -26,7 +26,7 @@
  function brokerageLine(context){
   const line=document.createElement('div');
   line.className='brokerage-affiliation'+(context?' brokerage-affiliation--'+context:'');
-  line.textContent=brokerageName;
+  line.textContent=context==='cta'?'Brant Baylock | '+brokerageName:brokerageName;
   line.setAttribute('aria-label','Brokerage: '+brokerageName);
   return line;
  }
@@ -39,8 +39,8 @@
   if(firstContact)firstContact.insertAdjacentElement('beforebegin',brokerageLine('contact'));
  });
  document.querySelectorAll('main .btn-row').forEach(row=>{
-  if(!hasContactPoint(row)||row.closest('.contact-card')||row.previousElementSibling?.classList.contains('brokerage-affiliation'))return;
-  row.insertAdjacentElement('beforebegin',brokerageLine('contact'));
+  if(!hasContactPoint(row)||row.closest('.contact-card')||row.nextElementSibling?.classList.contains('brokerage-affiliation'))return;
+  row.insertAdjacentElement('afterend',brokerageLine('cta'));
  });
  document.querySelectorAll('footer .footer-grid > div').forEach(column=>{
   const heading=column.querySelector(':scope > strong');
@@ -173,7 +173,7 @@
  const base=location.pathname.startsWith('/brantbaylock-site')?'/brantbaylock-site':'';
  const css=document.createElement('link');
  css.rel='stylesheet';
- css.href=base+'/assets/v5-overrides.css?v=6.3';
+ css.href=base+'/assets/v5-overrides.css?v=6.4';
  document.head.appendChild(css);
  const js=document.createElement('script');
  js.src=base+'/assets/v5-patch.js?v=6.2';
