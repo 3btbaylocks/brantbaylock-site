@@ -26,12 +26,24 @@
  document.querySelectorAll('footer .footer-grid > div').forEach(column=>{
   const heading=column.querySelector(':scope > strong');
   const links=column.querySelector(':scope > .footer-links');
-  if(!heading||!links||heading.textContent.trim()!=='Connect'||column.querySelector('.brokerage-affiliation'))return;
-  const line=document.createElement('div');
-  line.className='brokerage-affiliation brokerage-affiliation--footer';
-  line.textContent=brokerageName;
-  line.setAttribute('aria-label','Brokerage: '+brokerageName);
-  links.insertAdjacentElement('beforebegin',line);
+  if(!heading||!links||heading.textContent.trim()!=='Connect')return;
+  if(!column.querySelector('.brokerage-affiliation')){
+   const line=document.createElement('div');
+   line.className='brokerage-affiliation brokerage-affiliation--footer';
+   line.textContent=brokerageName;
+   line.setAttribute('aria-label','Brokerage: '+brokerageName);
+   links.insertAdjacentElement('beforebegin',line);
+  }
+  if(cfg.calendlyUrl&&!links.querySelector('[data-config-link="calendlyUrl"]')){
+   const booking=document.createElement('a');
+   booking.href=cfg.calendlyUrl;
+   booking.target='_blank';
+   booking.rel='noopener';
+   booking.dataset.configLink='calendlyUrl';
+   booking.dataset.track='footer-listening-session';
+   booking.textContent='Book a 15-Minute Listening Session';
+   links.appendChild(booking);
+  }
  });
 
  function event(name,params){
@@ -80,6 +92,9 @@
   }
   if(rawHref.startsWith('mailto:')){
    return {name:'email_click',params:{source_page:sourcePage,link_location:locationName}};
+  }
+  if(configKey==='calendlyUrl'){
+   return {name:'calendly_booking_open',params:{session_length:'15_minutes',source_page:sourcePage,link_location:locationName}};
   }
   if(configKey){
    const formTypes={
