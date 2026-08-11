@@ -168,6 +168,22 @@
     "sortOrder": 40
   },
   {
+    "contentId": "ARTICLE-AHCA-SURVEY-VALUE",
+    "contentType": "Article",
+    "status": "Published",
+    "featured": "Yes",
+    "currentEdition": "No",
+    "title": "How Much Does AHCA Survey History Affect the Value of a Florida Senior Living Community?",
+    "slug": "ahca-survey-history-value",
+    "publishDate": "2026-08-09",
+    "category": "Owner Decisions",
+    "eyebrow": "AHCA Survey History & Value",
+    "summary": "An owner-focused look at how AHCA survey history can shape buyer perception, diligence, risk, and the value conversation around a Florida senior living community.",
+    "externalUrl": "https://www.linkedin.com/pulse/how-much-does-ahca-survey-history-affect-value-florida-brant-baylock-b9j3e/",
+    "ctaLabel": "Read the article",
+    "sortOrder": 99
+  },
+  {
     "contentId": "ARTICLE-BUYER-CALLS",
     "contentType": "Article",
     "status": "Published",
