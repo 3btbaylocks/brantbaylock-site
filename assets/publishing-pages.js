@@ -1,7 +1,7 @@
 async function loadContent(){
  const cfg=window.BB_CONFIG||{};
  if(cfg.contentApiUrl){try{return await new Promise((resolve,reject)=>{const cb='bbcb_'+Date.now();window[cb]=d=>{resolve(d.items||d);delete window[cb];s.remove()};const s=document.createElement('script');s.src=cfg.contentApiUrl+(cfg.contentApiUrl.includes('?')?'&':'?')+'callback='+cb;s.onerror=reject;document.head.appendChild(s);setTimeout(()=>reject(new Error('timeout')),7000)});}catch(e){console.warn('Content API unavailable; using fallback.',e)}}
- const r=await fetch('/content/content.json?v=20260902-1546',{cache:'no-store'});return r.json();
+ const r=await fetch('/content/content.json?v=20260904-2106',{cache:'no-store'});return r.json();
 }
 function esc(s){return String(s||'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
 function fmtDate(s){if(!s)return'';const d=new Date(s+'T12:00:00');return d.toLocaleDateString('en-US',{month:'long',year:'numeric'})}
@@ -27,6 +27,24 @@ loadContent().then(items=>{
   sortOrder:96
  };
  if(!items.some(x=>x.contentId===latestArticle.contentId))items.push(latestArticle);
+ items.forEach(x=>{if(x.contentType==='Corridor Edition'){x.currentEdition='No';x.featured='No'}});
+ const septemberCorridor={
+  contentId:'CORRIDOR-2026-09',
+  contentType:'Corridor Edition',
+  status:'Published',
+  featured:'Yes',
+  currentEdition:'Yes',
+  title:'The Corridor | September 2026',
+  slug:'corridor-september-2026',
+  publishDate:'2026-09-01',
+  category:'Market Intelligence',
+  eyebrow:'September 2026',
+  summary:'August added no verified new 17+ bed listing, price reduction, status change, closed sale, pending event, withdrawal, opening, or pipeline event. With no verified closed sale in the June-August tracker window, the local comp set is aging and community-specific proof matters more.',
+  ctaLabel:'Request the September edition',
+  sortOrder:4
+ };
+ const septemberIndex=items.findIndex(x=>x.contentId===septemberCorridor.contentId);
+ if(septemberIndex>=0)items[septemberIndex]={...items[septemberIndex],...septemberCorridor};else items.push(septemberCorridor);
  items=items.filter(x=>x.status==='Published').sort((a,b)=>(a.sortOrder||999)-(b.sortOrder||999));
  const i=document.querySelector('#insights-list');if(i){const a=items.filter(x=>x.contentType==='Article');i.innerHTML=a.map(card).join('')}
  const o=document.querySelector('#observations-list');if(o){const hiddenObservationIds=new Set(['OBS-NIC-NOVEMBER','OBS-SILVER-TSUNAMI']);const a=items.filter(x=>x.contentType==='Owner Observation'&&!hiddenObservationIds.has(x.contentId));o.innerHTML=a.map(card).join('')}
