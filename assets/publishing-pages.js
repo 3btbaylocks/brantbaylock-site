@@ -27,6 +27,23 @@ loadContent().then(items=>{
   sortOrder:96
  };
  if(!items.some(x=>x.contentId===latestArticle.contentId))items.push(latestArticle);
+ const septemberArticle={
+  contentId:'ARTICLE-STEPPED-AWAY-30-DAYS',
+  contentType:'Article',
+  status:'Published',
+  featured:'Yes',
+  currentEdition:'No',
+  title:'If You Stepped Away for 30 Days, What Would Your Senior Living Community Tell You?',
+  slug:'stepped-away-30-days-senior-living-community',
+  publishDate:'2026-09-13',
+  category:'Owner Decisions',
+  eyebrow:'Owner Dependence & Continuity',
+  summary:'A practical owner-side look at what stepping away can reveal about leadership depth, decision authority, operating systems, and how much of the community still depends on ownership personally.',
+  externalUrl:'https://www.linkedin.com/pulse/you-stepped-away-30-days-what-would-your-senior-living-brant-baylock-sxnse/?trackingId=yLM4HBqfSD%2BbU%2B3rKiVEIQ%3D%3D',
+  ctaLabel:'Read the article',
+  sortOrder:95
+ };
+ if(!items.some(x=>x.contentId===septemberArticle.contentId))items.push(septemberArticle);
  items.forEach(x=>{if(x.contentType==='Corridor Edition'){x.currentEdition='No';x.featured='No'}});
  const septemberCorridor={
   contentId:'CORRIDOR-2026-09',
