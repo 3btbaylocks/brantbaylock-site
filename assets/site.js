@@ -8,6 +8,9 @@
 
  const menu=document.querySelector('.menu-button');
  const nav=document.querySelector('.nav-links');
+ if(nav){
+  nav.innerHTML='<a href="/owner-advisory.html">Advisory</a><a href="/market-intelligence.html">Market Intelligence</a><a href="/insights.html">Insights</a><a href="/weekend-placement-readiness.html">WPR</a><a href="/about.html">About</a><a class="btn primary" href="/contact.html">Contact</a>';
+ }
  if(menu&&nav){
   menu.addEventListener('click',()=>{
    const open=nav.classList.toggle('open');
@@ -19,6 +22,27 @@
  document.querySelectorAll('.nav-links a').forEach(a=>{
   const linkFile=(a.getAttribute('href')||'').split('/').pop();
   if(linkFile===currentFile)a.classList.add('active');
+ });
+
+ // Preserve Resources and Professional Advisors as contextual/footer destinations.
+ document.querySelectorAll('footer .footer-grid > div').forEach(column=>{
+  const heading=column.querySelector(':scope > strong');
+  const links=column.querySelector(':scope > .footer-links');
+  if(!heading||!links)return;
+  if(heading.textContent.trim()==='Explore'){
+   if(!links.querySelector('a[href="/resources.html"]')){
+    const resources=document.createElement('a');
+    resources.href='/resources.html';
+    resources.textContent='Resources';
+    links.appendChild(resources);
+   }
+   if(!links.querySelector('a[href="/professional-advisors.html"]')){
+    const advisors=document.createElement('a');
+    advisors.href='/professional-advisors.html';
+    advisors.textContent='Professional Advisors';
+    links.appendChild(advisors);
+   }
+  }
  });
 
  // Brokerage identification is contained to the sitewide Connect footer.
