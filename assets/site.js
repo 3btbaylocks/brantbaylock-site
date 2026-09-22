@@ -1,9 +1,21 @@
 (function(){
  const cfg=window.BB_CONFIG||{};
 
+ // Identify appointments opened from this website without changing the Calendly event type.
+ function websiteCalendlyUrl(value){
+  try{
+   const url=new URL(value);
+   if(url.hostname!=='calendly.com'&&!url.hostname.endsWith('.calendly.com'))return value;
+   if(!url.searchParams.has('utm_source'))url.searchParams.set('utm_source','brantbaylock.com');
+   if(!url.searchParams.has('utm_medium'))url.searchParams.set('utm_medium','website');
+   if(!url.searchParams.has('utm_campaign'))url.searchParams.set('utm_campaign','site_booking');
+   return url.toString();
+  }catch(_){return value;}
+ }
+
  document.querySelectorAll('[data-config-link]').forEach(a=>{
   const key=a.dataset.configLink;
-  if(cfg[key])a.href=cfg[key];
+  if(cfg[key])a.href=key==='calendlyUrl'?websiteCalendlyUrl(cfg[key]):cfg[key];
  });
 
  const menu=document.querySelector('.menu-button');
@@ -60,7 +72,7 @@
   }
   if(cfg.calendlyUrl&&!links.querySelector('[data-config-link="calendlyUrl"]')){
    const booking=document.createElement('a');
-   booking.href=cfg.calendlyUrl;
+   booking.href=websiteCalendlyUrl(cfg.calendlyUrl);
    booking.target='_blank';
    booking.rel='noopener';
    booking.dataset.configLink='calendlyUrl';
