@@ -1,7 +1,7 @@
 async function loadContent(){
  const cfg=window.BB_CONFIG||{};
  if(cfg.contentApiUrl){try{return await new Promise((resolve,reject)=>{const cb='bbcb_'+Date.now();window[cb]=d=>{resolve(d.items||d);delete window[cb];s.remove()};const s=document.createElement('script');s.src=cfg.contentApiUrl+(cfg.contentApiUrl.includes('?')?'&':'?')+'callback='+cb;s.onerror=reject;document.head.appendChild(s);setTimeout(()=>reject(new Error('timeout')),7000)});}catch(e){console.warn('Content API unavailable; using fallback.',e)}}
- const r=await fetch('/content/content.json?v=20260922-owner-authority',{cache:'no-store'});return r.json();
+ const r=await fetch('/content/content.json?v=20261011-owner-continuity',{cache:'no-store'});return r.json();
 }
 function esc(s){return String(s||'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
 function fmtDate(s){if(!s)return'';const d=new Date(s+'T12:00:00');return d.toLocaleDateString('en-US',{month:'long',year:'numeric'})}
@@ -44,6 +44,57 @@ loadContent().then(items=>{
   sortOrder:95
  };
  if(!items.some(x=>x.contentId===septemberArticle.contentId))items.push(septemberArticle);
+ const ownerAdministratorArticle={
+  contentId:'ARTICLE-OWNER-ADMINISTRATOR-DEPENDENCE',
+  contentType:'Article',
+  status:'Published',
+  featured:'Yes',
+  currentEdition:'No',
+  title:'Can You Be Both the Owner and Administrator Without Making the Community Depend on You?',
+  slug:'owner-administrator-community-dependence',
+  publishDate:'2026-09-27',
+  category:'Owner Decisions',
+  eyebrow:'Owner-Administrator Dependence',
+  summary:'Serving as both owner and administrator can work well, but the structure becomes vulnerable when the community cannot separate the roles from the person. A practical look at decision boundaries, continuity, and transferability.',
+  externalUrl:'https://www.linkedin.com/pulse/can-you-both-owner-administrator-without-making-depend-brant-baylock-8kc0e/',
+  ctaLabel:'Read the article',
+  sortOrder:93
+ };
+ if(!items.some(x=>x.contentId===ownerAdministratorArticle.contentId))items.push(ownerAdministratorArticle);
+ const administratorLeavesArticle={
+  contentId:'ARTICLE-ADMINISTRATOR-LEAVES-TOMORROW',
+  contentType:'Article',
+  status:'Published',
+  featured:'Yes',
+  currentEdition:'No',
+  title:'What Happens if Your ALF Administrator Leaves Tomorrow?',
+  slug:'alf-administrator-leaves-tomorrow',
+  publishDate:'2026-10-04',
+  category:'Owner Decisions',
+  eyebrow:'Leadership Continuity',
+  summary:'An administrator leaving can expose more than a staffing vacancy. This article looks at what ownership should understand about decision authority, operating knowledge, continuity, and how much of the community depends on one leader.',
+  externalUrl:'https://www.linkedin.com/pulse/what-happens-your-alf-administrator-leaves-tomorrow-brant-baylock-a3lje/',
+  ctaLabel:'Read the article',
+  sortOrder:92
+ };
+ if(!items.some(x=>x.contentId===administratorLeavesArticle.contentId))items.push(administratorLeavesArticle);
+ const unwrittenKnowledgeArticle={
+  contentId:'ARTICLE-UNWRITTEN-COMMUNITY-KNOWLEDGE',
+  contentType:'Article',
+  status:'Published',
+  featured:'Yes',
+  currentEdition:'No',
+  title:"What Does Your Community Know That Isn't Written Down?",
+  slug:'community-knowledge-not-written-down',
+  publishDate:'2026-10-11',
+  category:'Owner Decisions',
+  eyebrow:'Institutional Knowledge & Continuity',
+  summary:'Policies and records do not capture everything a community knows. This article looks at the operating knowledge that lives in people, the risk created when it is not transferable, and what ownership should make visible before that knowledge walks out the door.',
+  externalUrl:'https://www.linkedin.com/pulse/what-does-your-community-know-isnt-written-down-brant-baylock-h4iye/',
+  ctaLabel:'Read the article',
+  sortOrder:91
+ };
+ if(!items.some(x=>x.contentId===unwrittenKnowledgeArticle.contentId))items.push(unwrittenKnowledgeArticle);
  items.forEach(x=>{if(x.contentType==='Corridor Edition'){x.currentEdition='No';x.featured='No'}});
  const septemberCorridor={
   contentId:'CORRIDOR-2026-09',
