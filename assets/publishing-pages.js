@@ -1,7 +1,7 @@
 async function loadContent(){
  const cfg=window.BB_CONFIG||{};
  if(cfg.contentApiUrl){try{return await new Promise((resolve,reject)=>{const cb='bbcb_'+Date.now();window[cb]=d=>{resolve(d.items||d);delete window[cb];s.remove()};const s=document.createElement('script');s.src=cfg.contentApiUrl+(cfg.contentApiUrl.includes('?')?'&':'?')+'callback='+cb;s.onerror=reject;document.head.appendChild(s);setTimeout(()=>reject(new Error('timeout')),7000)});}catch(e){console.warn('Content API unavailable; using fallback.',e)}}
- const r=await fetch('/content/content.json?v=20261011-owner-continuity',{cache:'no-store'});return r.json();
+ const r=await fetch('/content/content.json?v=20261018-payer-mix',{cache:'no-store'});return r.json();
 }
 function esc(s){return String(s||'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
 function fmtDate(s){if(!s)return'';const d=new Date(s+'T12:00:00');return d.toLocaleDateString('en-US',{month:'long',year:'numeric'})}
@@ -95,6 +95,23 @@ loadContent().then(items=>{
   sortOrder:91
  };
  if(!items.some(x=>x.contentId===unwrittenKnowledgeArticle.contentId))items.push(unwrittenKnowledgeArticle);
+ const payerMixArticle={
+  contentId:'ARTICLE-PRIVATE-PAY-MEDICAID',
+  contentType:'Article',
+  status:'Published',
+  featured:'Yes',
+  currentEdition:'No',
+  title:'Should My Assisted Living Community Be Private Pay or Medicaid?',
+  slug:'assisted-living-community-private-pay-or-medicaid',
+  publishDate:'2026-10-18',
+  category:'Owner Decisions',
+  eyebrow:'Payer Mix & Positioning',
+  summary:'Private pay and Medicaid are not simply reimbursement choices. This article looks at how payer mix can affect census strategy, revenue durability, operating complexity, market positioning, and the decisions ownership may face over time.',
+  externalUrl:'https://www.linkedin.com/pulse/should-my-assisted-living-community-private-pay-medicaid-baylock-scaie/',
+  ctaLabel:'Read the article',
+  sortOrder:90
+ };
+ if(!items.some(x=>x.contentId===payerMixArticle.contentId))items.push(payerMixArticle);
  items.forEach(x=>{if(x.contentType==='Corridor Edition'){x.currentEdition='No';x.featured='No'}});
  const septemberCorridor={
   contentId:'CORRIDOR-2026-09',
