@@ -1,7 +1,7 @@
 async function loadContent(){
  const cfg=window.BB_CONFIG||{};
  if(cfg.contentApiUrl){try{return await new Promise((resolve,reject)=>{const cb='bbcb_'+Date.now();window[cb]=d=>{resolve(d.items||d);delete window[cb];s.remove()};const s=document.createElement('script');s.src=cfg.contentApiUrl+(cfg.contentApiUrl.includes('?')?'&':'?')+'callback='+cb;s.onerror=reject;document.head.appendChild(s);setTimeout(()=>reject(new Error('timeout')),7000)});}catch(e){console.warn('Content API unavailable; using fallback.',e)}}
- const r=await fetch('/content/content.json?v=20261018-payer-mix',{cache:'no-store'});return r.json();
+ const r=await fetch('/content/content.json?v=20261020-corridor-october',{cache:'no-store'});return r.json();
 }
 function esc(s){return String(s||'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
 function fmtDate(s){if(!s)return'';const d=new Date(s+'T12:00:00');return d.toLocaleDateString('en-US',{month:'long',year:'numeric'})}
@@ -12,124 +12,23 @@ loadContent().then(items=>{
  items=items||[];
  const latestArticle={
   contentId:'ARTICLE-THREE-CLOCKS-ONE-TRANSACTION',
-  contentType:'Article',
-  status:'Published',
-  featured:'Yes',
-  currentEdition:'No',
-  title:'THREE CLOCKS. ONE TRANSACTION.',
-  slug:'three-clocks-one-transaction',
-  publishDate:'2026-08-30',
-  category:'Owner Decisions',
-  eyebrow:'Transaction Timing',
-  summary:'A look at how different timelines can move through the same senior living transaction, and why owners should understand the timing before the process begins.',
-  externalUrl:'https://www.linkedin.com/pulse/three-clocks-one-transaction-brant-baylock-x4lae?utm_source=share&utm_medium=member_android&utm_campaign=share_via',
-  ctaLabel:'Read the article',
-  sortOrder:96
- };
+  contentType:'Article',status:'Published',featured:'Yes',currentEdition:'No',title:'THREE CLOCKS. ONE TRANSACTION.',slug:'three-clocks-one-transaction',publishDate:'2026-08-30',category:'Owner Decisions',eyebrow:'Transaction Timing',summary:'A look at how different timelines can move through the same senior living transaction, and why owners should understand the timing before the process begins.',externalUrl:'https://www.linkedin.com/pulse/three-clocks-one-transaction-brant-baylock-x4lae?utm_source=share&utm_medium=member_android&utm_campaign=share_via',ctaLabel:'Read the article',sortOrder:96};
  if(!items.some(x=>x.contentId===latestArticle.contentId))items.push(latestArticle);
- const septemberArticle={
-  contentId:'ARTICLE-STEPPED-AWAY-30-DAYS',
-  contentType:'Article',
-  status:'Published',
-  featured:'Yes',
-  currentEdition:'No',
-  title:'If You Stepped Away for 30 Days, What Would Your Senior Living Community Tell You?',
-  slug:'stepped-away-30-days-senior-living-community',
-  publishDate:'2026-09-13',
-  category:'Owner Decisions',
-  eyebrow:'Owner Dependence & Continuity',
-  summary:'A practical owner-side look at what stepping away can reveal about leadership depth, decision authority, operating systems, and how much of the community still depends on ownership personally.',
-  externalUrl:'https://www.linkedin.com/pulse/you-stepped-away-30-days-what-would-your-senior-living-brant-baylock-sxnse/?trackingId=yLM4HBqfSD%2BbU%2B3rKiVEIQ%3D%3D',
-  ctaLabel:'Read the article',
-  sortOrder:95
- };
+ const septemberArticle={contentId:'ARTICLE-STEPPED-AWAY-30-DAYS',contentType:'Article',status:'Published',featured:'Yes',currentEdition:'No',title:'If You Stepped Away for 30 Days, What Would Your Senior Living Community Tell You?',slug:'stepped-away-30-days-senior-living-community',publishDate:'2026-09-13',category:'Owner Decisions',eyebrow:'Owner Dependence & Continuity',summary:'A practical owner-side look at what stepping away can reveal about leadership depth, decision authority, operating systems, and how much of the community still depends on ownership personally.',externalUrl:'https://www.linkedin.com/pulse/you-stepped-away-30-days-what-would-your-senior-living-brant-baylock-sxnse/?trackingId=yLM4HBqfSD%2BbU%2B3rKiVEIQ%3D%3D',ctaLabel:'Read the article',sortOrder:95};
  if(!items.some(x=>x.contentId===septemberArticle.contentId))items.push(septemberArticle);
- const ownerAdministratorArticle={
-  contentId:'ARTICLE-OWNER-ADMINISTRATOR-DEPENDENCE',
-  contentType:'Article',
-  status:'Published',
-  featured:'Yes',
-  currentEdition:'No',
-  title:'Can You Be Both the Owner and Administrator Without Making the Community Depend on You?',
-  slug:'owner-administrator-community-dependence',
-  publishDate:'2026-09-27',
-  category:'Owner Decisions',
-  eyebrow:'Owner-Administrator Dependence',
-  summary:'Serving as both owner and administrator can work well, but the structure becomes vulnerable when the community cannot separate the roles from the person. A practical look at decision boundaries, continuity, and transferability.',
-  externalUrl:'https://www.linkedin.com/pulse/can-you-both-owner-administrator-without-making-depend-brant-baylock-8kc0e/',
-  ctaLabel:'Read the article',
-  sortOrder:93
- };
+ const ownerAdministratorArticle={contentId:'ARTICLE-OWNER-ADMINISTRATOR-DEPENDENCE',contentType:'Article',status:'Published',featured:'Yes',currentEdition:'No',title:'Can You Be Both the Owner and Administrator Without Making the Community Depend on You?',slug:'owner-administrator-community-dependence',publishDate:'2026-09-27',category:'Owner Decisions',eyebrow:'Owner-Administrator Dependence',summary:'Serving as both owner and administrator can work well, but the structure becomes vulnerable when the community cannot separate the roles from the person. A practical look at decision boundaries, continuity, and transferability.',externalUrl:'https://www.linkedin.com/pulse/can-you-both-owner-administrator-without-making-depend-brant-baylock-8kc0e/',ctaLabel:'Read the article',sortOrder:93};
  if(!items.some(x=>x.contentId===ownerAdministratorArticle.contentId))items.push(ownerAdministratorArticle);
- const administratorLeavesArticle={
-  contentId:'ARTICLE-ADMINISTRATOR-LEAVES-TOMORROW',
-  contentType:'Article',
-  status:'Published',
-  featured:'Yes',
-  currentEdition:'No',
-  title:'What Happens if Your ALF Administrator Leaves Tomorrow?',
-  slug:'alf-administrator-leaves-tomorrow',
-  publishDate:'2026-10-04',
-  category:'Owner Decisions',
-  eyebrow:'Leadership Continuity',
-  summary:'An administrator leaving can expose more than a staffing vacancy. This article looks at what ownership should understand about decision authority, operating knowledge, continuity, and how much of the community depends on one leader.',
-  externalUrl:'https://www.linkedin.com/pulse/what-happens-your-alf-administrator-leaves-tomorrow-brant-baylock-a3lje/',
-  ctaLabel:'Read the article',
-  sortOrder:92
- };
+ const administratorLeavesArticle={contentId:'ARTICLE-ADMINISTRATOR-LEAVES-TOMORROW',contentType:'Article',status:'Published',featured:'Yes',currentEdition:'No',title:'What Happens if Your ALF Administrator Leaves Tomorrow?',slug:'alf-administrator-leaves-tomorrow',publishDate:'2026-10-04',category:'Owner Decisions',eyebrow:'Leadership Continuity',summary:'An administrator leaving can expose more than a staffing vacancy. This article looks at what ownership should understand about decision authority, operating knowledge, continuity, and how much of the community depends on one leader.',externalUrl:'https://www.linkedin.com/pulse/what-happens-your-alf-administrator-leaves-tomorrow-brant-baylock-a3lje/',ctaLabel:'Read the article',sortOrder:92};
  if(!items.some(x=>x.contentId===administratorLeavesArticle.contentId))items.push(administratorLeavesArticle);
- const unwrittenKnowledgeArticle={
-  contentId:'ARTICLE-UNWRITTEN-COMMUNITY-KNOWLEDGE',
-  contentType:'Article',
-  status:'Published',
-  featured:'Yes',
-  currentEdition:'No',
-  title:"What Does Your Community Know That Isn't Written Down?",
-  slug:'community-knowledge-not-written-down',
-  publishDate:'2026-10-11',
-  category:'Owner Decisions',
-  eyebrow:'Institutional Knowledge & Continuity',
-  summary:'Policies and records do not capture everything a community knows. This article looks at the operating knowledge that lives in people, the risk created when it is not transferable, and what ownership should make visible before that knowledge walks out the door.',
-  externalUrl:'https://www.linkedin.com/pulse/what-does-your-community-know-isnt-written-down-brant-baylock-h4iye/',
-  ctaLabel:'Read the article',
-  sortOrder:91
- };
+ const unwrittenKnowledgeArticle={contentId:'ARTICLE-UNWRITTEN-COMMUNITY-KNOWLEDGE',contentType:'Article',status:'Published',featured:'Yes',currentEdition:'No',title:"What Does Your Community Know That Isn't Written Down?",slug:'community-knowledge-not-written-down',publishDate:'2026-10-11',category:'Owner Decisions',eyebrow:'Institutional Knowledge & Continuity',summary:'Policies and records do not capture everything a community knows. This article looks at the operating knowledge that lives in people, the risk created when it is not transferable, and what ownership should make visible before that knowledge walks out the door.',externalUrl:'https://www.linkedin.com/pulse/what-does-your-community-know-isnt-written-down-brant-baylock-h4iye/',ctaLabel:'Read the article',sortOrder:91};
  if(!items.some(x=>x.contentId===unwrittenKnowledgeArticle.contentId))items.push(unwrittenKnowledgeArticle);
- const payerMixArticle={
-  contentId:'ARTICLE-PRIVATE-PAY-MEDICAID',
-  contentType:'Article',
-  status:'Published',
-  featured:'Yes',
-  currentEdition:'No',
-  title:'Should My Assisted Living Community Be Private Pay or Medicaid?',
-  slug:'assisted-living-community-private-pay-or-medicaid',
-  publishDate:'2026-10-18',
-  category:'Owner Decisions',
-  eyebrow:'Payer Mix & Positioning',
-  summary:'Private pay and Medicaid are not simply reimbursement choices. This article looks at how payer mix can affect census strategy, revenue durability, operating complexity, market positioning, and the decisions ownership may face over time.',
-  externalUrl:'https://www.linkedin.com/pulse/should-my-assisted-living-community-private-pay-medicaid-baylock-scaie/',
-  ctaLabel:'Read the article',
-  sortOrder:90
- };
+ const payerMixArticle={contentId:'ARTICLE-PRIVATE-PAY-MEDICAID',contentType:'Article',status:'Published',featured:'Yes',currentEdition:'No',title:'Should My Assisted Living Community Be Private Pay or Medicaid?',slug:'assisted-living-community-private-pay-or-medicaid',publishDate:'2026-10-18',category:'Owner Decisions',eyebrow:'Payer Mix & Positioning',summary:'Private pay and Medicaid are not simply reimbursement choices. This article looks at how payer mix can affect census strategy, revenue durability, operating complexity, market positioning, and the decisions ownership may face over time.',externalUrl:'https://www.linkedin.com/pulse/should-my-assisted-living-community-private-pay-medicaid-baylock-scaie/',ctaLabel:'Read the article',sortOrder:90};
  if(!items.some(x=>x.contentId===payerMixArticle.contentId))items.push(payerMixArticle);
  items.forEach(x=>{if(x.contentType==='Corridor Edition'){x.currentEdition='No';x.featured='No'}});
- const septemberCorridor={
-  contentId:'CORRIDOR-2026-09',
-  contentType:'Corridor Edition',
-  status:'Published',
-  featured:'Yes',
-  currentEdition:'Yes',
-  title:'The Corridor | September 2026',
-  slug:'corridor-september-2026',
-  publishDate:'2026-09-01',
-  category:'Market Intelligence',
-  eyebrow:'September 2026',
-  summary:'August added no verified new 17+ bed listing, price reduction, status change, closed sale, pending event, withdrawal, opening, or pipeline event. With no verified closed sale in the June-August tracker window, the local comp set is aging and community-specific proof matters more.',
-  ctaLabel:'Request the September edition',
-  sortOrder:4
- };
- const septemberIndex=items.findIndex(x=>x.contentId===septemberCorridor.contentId);
- if(septemberIndex>=0)items[septemberIndex]={...items[septemberIndex],...septemberCorridor};else items.push(septemberCorridor);
+ const septemberCorridor={contentId:'CORRIDOR-2026-09',contentType:'Corridor Edition',status:'Published',featured:'No',currentEdition:'No',title:'The Corridor | September 2026',slug:'corridor-september-2026',publishDate:'2026-09-01',category:'Market Intelligence',eyebrow:'September 2026',summary:'August added no verified new 17+ bed listing, price reduction, status change, closed sale, pending event, withdrawal, opening, or pipeline event. With no verified closed sale in the June-August tracker window, the local comp set is aging and community-specific proof matters more.',ctaLabel:'Request the September edition',sortOrder:4};
+ const septemberIndex=items.findIndex(x=>x.contentId===septemberCorridor.contentId);if(septemberIndex>=0)items[septemberIndex]={...items[septemberIndex],...septemberCorridor};else items.push(septemberCorridor);
+ const octoberCorridor={contentId:'CORRIDOR-2026-10',contentType:'Corridor Edition',status:'Published',featured:'Yes',currentEdition:'Yes',title:'The Corridor | October 2026',slug:'corridor-october-2026',publishDate:'2026-10-01',category:'Market Intelligence',eyebrow:'October 2026',summary:'September added no verified new 17+ bed listing, repricing, status change, sale, pending event, withdrawal, opening, or new pipeline event. After three quiet months, the clearer signal is evidentiary: visibility is not movement, and community-specific operating proof must carry more of the value conversation.',ctaLabel:'Request the October edition',sortOrder:3};
+ const octoberIndex=items.findIndex(x=>x.contentId===octoberCorridor.contentId);if(octoberIndex>=0)items[octoberIndex]={...items[octoberIndex],...octoberCorridor};else items.push(octoberCorridor);
  items=items.filter(x=>x.status==='Published').sort((a,b)=>(a.sortOrder||999)-(b.sortOrder||999));
  const i=document.querySelector('#insights-list');if(i){const a=items.filter(x=>x.contentType==='Article');i.innerHTML=a.map(card).join('')}
  const o=document.querySelector('#observations-list');if(o){const hiddenObservationIds=new Set(['OBS-NIC-NOVEMBER','OBS-SILVER-TSUNAMI']);const a=items.filter(x=>x.contentType==='Owner Observation'&&!hiddenObservationIds.has(x.contentId));o.innerHTML=a.map(card).join('')}
