@@ -1,7 +1,7 @@
 async function loadContent(){
  const cfg=window.BB_CONFIG||{};
  if(cfg.contentApiUrl){try{return await new Promise((resolve,reject)=>{const cb='bbcb_'+Date.now();window[cb]=d=>{resolve(d.items||d);delete window[cb];s.remove()};const s=document.createElement('script');s.src=cfg.contentApiUrl+(cfg.contentApiUrl.includes('?')?'&':'?')+'callback='+cb;s.onerror=reject;document.head.appendChild(s);setTimeout(()=>reject(new Error('timeout')),7000)});}catch(e){console.warn('Content API unavailable; using fallback.',e)}}
- const r=await fetch('/content/content.json?v=20261020-corridor-october',{cache:'no-store'});return r.json();
+ const r=await fetch('/content/content.json?v=20261117-policies-article',{cache:'no-store'});return r.json();
 }
 function esc(s){return String(s||'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
 function fmtDate(s){if(!s)return'';const d=new Date(s+'T12:00:00');return d.toLocaleDateString('en-US',{month:'long',year:'numeric'})}
@@ -24,6 +24,22 @@ loadContent().then(items=>{
  if(!items.some(x=>x.contentId===unwrittenKnowledgeArticle.contentId))items.push(unwrittenKnowledgeArticle);
  const payerMixArticle={contentId:'ARTICLE-PRIVATE-PAY-MEDICAID',contentType:'Article',status:'Published',featured:'Yes',currentEdition:'No',title:'Should My Assisted Living Community Be Private Pay or Medicaid?',slug:'assisted-living-community-private-pay-or-medicaid',publishDate:'2026-10-18',category:'Owner Decisions',eyebrow:'Payer Mix & Positioning',summary:'Private pay and Medicaid are not simply reimbursement choices. This article looks at how payer mix can affect census strategy, revenue durability, operating complexity, market positioning, and the decisions ownership may face over time.',externalUrl:'https://www.linkedin.com/pulse/should-my-assisted-living-community-private-pay-medicaid-baylock-scaie/',ctaLabel:'Read the article',sortOrder:90};
  if(!items.some(x=>x.contentId===payerMixArticle.contentId))items.push(payerMixArticle);
+ const policiesArticle={
+  contentId:'ARTICLE-POLICIES-RUNNING-COMMUNITY',
+  contentType:'Article',
+  status:'Published',
+  featured:'Yes',
+  currentEdition:'No',
+  title:'Are Your Policies Running Your Community or Just Sitting in a Binder?',
+  slug:'policies-running-community-or-sitting-in-binder',
+  category:'Owner Decisions',
+  eyebrow:'Operating Systems & Accountability',
+  summary:'Written policies are only as useful as their application. A look at the difference between documentation on the shelf and operating practices that guide decisions, accountability, and continuity.',
+  externalUrl:'https://www.linkedin.com/pulse/your-policies-running-community-just-sitting-binder-brant-baylock-p9k4e/',
+  ctaLabel:'Read the article',
+  sortOrder:89
+ };
+ if(!items.some(x=>x.contentId===policiesArticle.contentId))items.push(policiesArticle);
  items.forEach(x=>{if(x.contentType==='Corridor Edition'){x.currentEdition='No';x.featured='No'}});
  const septemberCorridor={contentId:'CORRIDOR-2026-09',contentType:'Corridor Edition',status:'Published',featured:'No',currentEdition:'No',title:'The Corridor | September 2026',slug:'corridor-september-2026',publishDate:'2026-09-01',category:'Market Intelligence',eyebrow:'September 2026',summary:'August added no verified new 17+ bed listing, price reduction, status change, closed sale, pending event, withdrawal, opening, or pipeline event. With no verified closed sale in the June-August tracker window, the local comp set is aging and community-specific proof matters more.',ctaLabel:'Request the September edition',sortOrder:4};
  const septemberIndex=items.findIndex(x=>x.contentId===septemberCorridor.contentId);if(septemberIndex>=0)items[septemberIndex]={...items[septemberIndex],...septemberCorridor};else items.push(septemberCorridor);
