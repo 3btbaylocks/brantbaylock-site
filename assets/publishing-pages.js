@@ -26,6 +26,7 @@ loadContent().then(items=>{
  if(!items.some(x=>x.contentId===payerMixArticle.contentId))items.push(payerMixArticle);
  const policiesArticle={
   contentId:'ARTICLE-POLICIES-RUNNING-COMMUNITY',
+  publishDate:'2026-11-15',
   contentType:'Article',
   status:'Published',
   featured:'Yes',
